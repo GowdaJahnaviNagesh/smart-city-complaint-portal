@@ -36,6 +36,7 @@ This project solves these challenges by building a **Salesforce-based portal** w
 - Stakeholder analysis  
 - Business process mapping  
 - AppExchange exploration
+- 📄 Detailed documentation: see `Phase1_completion.pdf`. 
    
 - **Phase 2 ✅ (Completed)**
 - Org setup (users, profiles, roles, permission sets)  
@@ -45,7 +46,8 @@ This project solves these challenges by building a **Salesforce-based portal** w
 - Complaint lifecycle Path (New → In Progress → Resolved → Closed)  
 - Reports & Dashboards for complaints, SLA breaches, and resolution time  
 - Gamified Feedback system (Feedback object + rating mechanism)  
-- Deployment setup (Scratch Org, Dev Org, SFDX CLI)  
+- Deployment setup (Scratch Org, Dev Org, SFDX CLI)
+-📄 Detailed documentation: see `Phase2_completion.pdf`.  
   
 **Upcoming Phases**
 - Advanced Automation (Escalation rules, SLA breach alerts)  
@@ -53,7 +55,7 @@ This project solves these challenges by building a **Salesforce-based portal** w
 - Citizen Feedback Portal integration  
 - Final Deployment to production/sandbox   
 
-📄 Detailed documentation: see `docs/Phase_1.docx`.  
+
 
 ---
 
@@ -84,4 +86,5 @@ smart-city-portal/
 👩‍💻Contributors
 
 Jahnavi Gowda — Salesforce Admin & Developer
+
 
