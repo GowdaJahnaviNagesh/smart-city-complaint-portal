@@ -49,7 +49,7 @@ Goal: Explore reusable Salesforce apps to reduce development effort.
 •	SLA & Escalation apps (for timers and breach alerts).
 •	Survey/Feedback apps (to capture citizen satisfaction).
 
-## Phase 2: Security, Access, and Deployment Setup ✅
+## Phase 2:Org Setup & Configuration ✅
 
 ### Key Achievements
 - **Users & Licenses:** Created additional test users with Salesforce Platform License.  
