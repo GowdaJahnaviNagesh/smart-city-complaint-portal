@@ -1,0 +1,39 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "JSONPlaceholder API",
+    "version": "1.0.0"
+  },
+  "host": "jsonplaceholder.typicode.com",
+  "basePath": "/",
+  "schemes": ["https"],
+  "paths": {
+    "/posts/{id}": {
+      "get": {
+        "summary": "Get a post by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": { "type": "integer" },
+                "id": { "type": "integer" },
+                "title": { "type": "string" },
+                "body": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

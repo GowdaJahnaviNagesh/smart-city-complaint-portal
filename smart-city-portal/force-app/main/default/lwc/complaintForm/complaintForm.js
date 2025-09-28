@@ -1,28 +1,36 @@
 import { LightningElement, track } from 'lwc';
 import createComplaint from '@salesforce/apex/ComplaintHandler.createComplaint';
+import getDepartments from '@salesforce/apex/ComplaintHandler.getDepartments';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class ComplaintForm extends LightningElement {
     @track citizenName = '';
     @track email = '';
     @track phone = '';
-    @track department = '';
+    @track department = '';   // stores Department Id
     @track description = '';
     @track priority = '';
 
-    departmentOptions = [
-        { label: 'Roads', value: 'Roads' },
-        { label: 'Water', value: 'Water' },
-        { label: 'Electricity', value: 'Electricity' },
-        { label: 'Others', value: 'Others' }
-    ];
-
+    departmentOptions = [];
     priorityOptions = [
         { label: 'Low', value: 'Low' },
         { label: 'Medium', value: 'Medium' },
         { label: 'High', value: 'High' },
         { label: 'Critical', value: 'Critical' }
     ];
+
+    // ✅ Load departments dynamically
+    connectedCallback() {
+        getDepartments()
+            .then(data => {
+                this.departmentOptions = data.map(dept => {
+                    return { label: dept.Name, value: dept.Id };
+                });
+            })
+            .catch(error => {
+                this.showToast('Error', error.body.message, 'error');
+            });
+    }
 
     handleChange(event) {
         this[event.target.dataset.field] = event.target.value;
@@ -33,28 +41,16 @@ export default class ComplaintForm extends LightningElement {
             citizenName: this.citizenName,
             email: this.email,
             phone: this.phone,
-            department: this.department,
+            departmentId: this.department,  // sending Id, not text
             description: this.description,
             priority: this.priority
         })
         .then(() => {
-            this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'Success',
-                    message: 'Complaint submitted successfully!',
-                    variant: 'success'
-                })
-            );
+            this.showToast('Success', 'Complaint submitted successfully!', 'success');
             this.clearForm();
         })
         .catch(error => {
-            this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'Error submitting complaint',
-                    message: error.body.message,
-                    variant: 'error'
-                })
-            );
+            this.showToast('Error submitting complaint', error.body.message, 'error');
         });
     }
 
@@ -65,5 +61,15 @@ export default class ComplaintForm extends LightningElement {
         this.department = '';
         this.description = '';
         this.priority = '';
+    }
+
+    showToast(title, message, variant) {
+        this.dispatchEvent(
+            new ShowToastEvent({
+                title: title,
+                message: message,
+                variant: variant
+            })
+        );
     }
 }

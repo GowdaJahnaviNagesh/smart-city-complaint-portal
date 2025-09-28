@@ -1,0 +1,9 @@
+<template>
+    <div>
+        <p>Listening for Complaint CDC Events...</p>
+        <template if:true={lastChangeEvent}>
+            <p>Id: {lastChangeEvent.Id}</p>
+            <p>Status: {lastChangeEvent.Status__c}</p>
+        </template>
+    </div>
+</template>

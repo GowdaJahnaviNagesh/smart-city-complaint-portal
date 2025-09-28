@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Submit Feedback" icon-name="custom:custom14">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+                name="rating"
+                label="Rating"
+                value={rating}
+                options={ratingOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <lightning-textarea
+                name="comments"
+                label="Comments"
+                value={comments}
+                onchange={handleChange}>
+            </lightning-textarea>
+
+            <lightning-button
+                class="slds-m-top_medium"
+                label="Submit Feedback"
+                variant="brand"
+                onclick={handleSubmit}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>
