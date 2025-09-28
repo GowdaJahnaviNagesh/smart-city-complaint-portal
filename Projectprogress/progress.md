@@ -49,3 +49,31 @@ Goal: Explore reusable Salesforce apps to reduce development effort.
 •	SLA & Escalation apps (for timers and breach alerts).
 •	Survey/Feedback apps (to capture citizen satisfaction).
 
+## Phase 2:Org Setup & Configuration ✅
+
+### Key Achievements
+- **Users & Licenses:** Created additional test users with Salesforce Platform License.  
+- **Profiles:** Customized Citizen and Admin profiles with appropriate object permissions.  
+- **Roles:** Defined role hierarchy — City Admin, Department Managers, Citizen Users.  
+- **Permission Sets:** Created Citizen Access Permission Set for Complaint__c.  
+- **Organization-Wide Defaults (OWD):** Complaint__c set to Private; Department__c set to Public Read Only.  
+- **Sharing Rules:** Configured complaint sharing rules for department managers based on lookup ownership.  
+- **Queues & Flows:** Complaints auto-assigned to department queues via Record-Triggered Flows.  
+- **Reports & Dashboards:** Built reports by department, status, SLA breaches, and an admin dashboard.  
+- **Gamified Feedback:** Feedback object created (Rating + Comments) linked to complaints.  
+
+### Dev Org, Sandbox & Deployment
+- Developer Org (**SmartCityMain**) configured as the main org.  
+- Scratch Org (**SmartCityScratch**) used to simulate sandbox functionality.  
+- Deployment managed via **SFDX CLI** (`sf project deploy start`).  
+- Awareness of Change Sets as an alternate deployment method.  
+
+### Deliverables
+- **Phase2_Completion.pdf** uploaded in `/docs/`.  
+- Screenshots added for:  
+  - User setup  
+  - Role hierarchy  
+  - Permission sets  
+  - OWD & sharing rules  
+  - Dashboard  
+  - CLI deployment logs  

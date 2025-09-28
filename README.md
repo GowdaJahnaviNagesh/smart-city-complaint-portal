@@ -31,11 +31,31 @@ This project solves these challenges by building a **Salesforce-based portal** w
 ---
 
 ## 🚀 Project Progress
-- **Phase 1 (Done)**: Requirement gathering, stakeholder analysis, business process mapping, AppExchange exploration.  
-- **Phase 2 (In Progress)**: Org setup (profiles, roles, permissions, OWD, sharing rules, business hours, deployment setup).  
-- Next phases → Automation, Reports, Feedback system, Deployment to sandbox/production.  
+- **Phase 1 (Completed)**
+- Requirement gathering  
+- Stakeholder analysis  
+- Business process mapping  
+- AppExchange exploration
+- 📄 Detailed documentation: see `Phase1_completion.pdf`. 
+   
+- **Phase 2 ✅ (Completed)**
+- Org setup (users, profiles, roles, permission sets)  
+- Organization-Wide Defaults (OWD) & Sharing Rules  
+- Queues & Record-Triggered Flows for auto-assignment  
+- SLA tracking via metadata-driven approach  
+- Complaint lifecycle Path (New → In Progress → Resolved → Closed)  
+- Reports & Dashboards for complaints, SLA breaches, and resolution time  
+- Gamified Feedback system (Feedback object + rating mechanism)  
+- Deployment setup (Scratch Org, Dev Org, SFDX CLI)
+-📄 Detailed documentation: see `Phase2_completion.pdf`.  
+  
+**Upcoming Phases**
+- Advanced Automation (Escalation rules, SLA breach alerts)  
+- Enhanced Reports & Dashboards  
+- Citizen Feedback Portal integration  
+- Final Deployment to production/sandbox   
 
-📄 Detailed documentation: see `docs/Phase_1.docx`.  
+
 
 ---
 
@@ -44,8 +64,8 @@ smart-city-portal/
 │
 ├── force-app/ # Salesforce metadata
 ├── config/ # Scratch org definitions
-├── docs/ # Project documentation (Word/PDF)
-│ └── Phase_1.docx
+├── Phase1_completion # Project documentation (Word/PDF)
+├── Phase2_completion # Project documentation (Word/PDF)
 ├── README.md # Project overview
 
 ---
@@ -66,3 +86,5 @@ smart-city-portal/
 👩‍💻Contributors
 
 Jahnavi Gowda — Salesforce Admin & Developer
+
+
